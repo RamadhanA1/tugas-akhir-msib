@@ -16,3 +16,38 @@ nav h2{
     width: 100%;
     height: 70vh;
 }
+
+.card-text{
+    font-size: small;
+}
+
+.product-slide{
+    min-height: 120vh;
+}
+
+.section-title{
+    color: green;
+}
+
+.section-title:after
+{
+    content:'';
+    display:block;
+    border:2px solid #FBB02D;
+    width: 10rem;
+    max-width: 70%;
+    margin: auto;
+}
+
+.product-title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: medium;
+}
+
+.img-product{
+    aspect-ratio: 1/1;
+    /* min-height: 300px; */
+    object-fit: cover;
+}
