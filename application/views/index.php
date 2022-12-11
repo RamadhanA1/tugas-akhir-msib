@@ -63,20 +63,18 @@
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div> -->
     <div class="carousel-inner">
-      <div class="carousel-item  active">
-        <img src="<?=base_url();?>/assets/img/hero-1.jpg" class="d-block w-100" alt="...">
+      <?php foreach($hero as $key => $rows): ?>
+        <div class="carousel-item  <?php echo ($key == 0 ? 'active':'')?>">
+        <img src="<?=base_url();?>/assets/img/<?php echo $rows['img']?>" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block text-start">
-          <h2>Perangkat Komputer dan Jaringan</h2>
-          <p>Kami menyediakan komponen komputer, laptop dan jaringan dengan harga terbaik.</p>
+          <h2><?php echo $rows['headline']?></h2>
+          <p><?php echo $rows['text']?></p>
         </div>
       </div>
-      <div class="carousel-item ">
-        <img src="<?=base_url();?>/assets/img/hero-2.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block text-start">
-          <h2>Jasa Perbaikan Komputer-Jaringan dan Pembuatan Website</h2>
-          <p>Dengan tenaga ahli, kami siap dalam menerima permintaan anda.</p>
-        </div>
-      </div>
+      <?php endforeach;?>
+
+      
+      
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -10,9 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;800&amp;family=Roboto:wght@400;500;700&amp;display=swap"
+    rel="stylesheet"/>
     <title>Log In</title>
   </head>
   <body class="">
@@ -39,7 +38,22 @@
           </a>
           <!-- <h1 class="text-success text-center m-0 fw-bold"><img class="img-fluid me-2" src="<?=base_url();?>/assets/img/logo-1.png" alt="" style="height:3rem">CompStore</h1> -->
           <h2 class="py-4 text-center fw-bold">Log In</h2>
-          <form class="mt-2 ">
+
+          <?php if (isset($_SESSION['error'])) : ?>
+					<div class="alert alert-light-danger color-danger">
+						<i class="bi bi-exclamation-circle"></i>
+						<?= $_SESSION['error'] ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if (isset($_SESSION['success'])) : ?>
+					<div class="alert alert-success">
+						<i class="bi bi-check-circle"></i>
+						<?= $_SESSION['success'] ?>
+					</div>
+				<?php endif; ?>
+
+          <form class="mt-2 " action="<?= site_url('Auth/prosesLogin') ?>" method="POST">
             <div class="mb-3 ">
               <label for="exampleInputEmail1" class="form-label"
                 >Email</label

@@ -1,174 +1,132 @@
-<?php 
-	session_start();
-	include '../conn/koneksi.php';
-	if(!isset($_SESSION['username'])){
-		header('location:../index.php');
-	}
-	elseif($_SESSION['data']['level'] != "admin"){
-		header('location:../index.php');
-	}
- ?>
-  <!DOCTYPE html>
-  <html>
-    <head>
-    	<title>Aplikasi Pengaduan masyarakat</title>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+<!DOCTYPE html>
+<html lang="en">
 
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Favicons -->
+  <link href="<?=base_url();?>assets/img/favicon.png" rel="icon">
+  <link href="<?=base_url();?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      
-      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-      
-      
-      <script type="text/javascript">
-        $(document).ready( function () {
-          $('#example').DataTable();
-          $('select').formSelect();
-        } );
-      
-      </script>
+  <!-- Vendor CSS Files -->
+  <link href="<?=base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?=base_url();?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="<?=base_url();?>assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="<?=base_url();?>assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="<?=base_url();?>assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="<?=base_url();?>assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="<?=base_url();?>assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-    </head>
+  <!-- Template Main CSS File -->
+  <link href="<?=base_url();?>assets/css/style3.css" rel="stylesheet">
 
-    <body style="background:url(../img/bg.jpg); background-size: cover;">
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.4.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
 
-    <div class="row">
-      <div class="col s12 m3">
-          <ul id="slide-out" class="sidenav sidenav-fixed">
-              <li>
-                  <div class="user-view">
-                      <div class="background">
-                          <img src="../img/bg.jpg">
-                      </div>
-                      <a href="#user"><img class="circle" src="https://cdn5.vectorstock.com/i/1000x1000/01/69/businesswoman-character-avatar-icon-vector-12800169.jpg"></a>
-                      <a href="#name"><span class="blue-text name"><?php echo ucwords($_SESSION['data']['nama_petugas']); ?></span></a>
-                  </div>
-              </li>
-              <li><a href="index.php?p=dashboard"><i class="material-icons">dashboard</i>Dashboard</a></li>
-              <li><a href="index.php?p=registrasi"><i class="material-icons">featured_play_list</i>Registrasi</a></li>
-              <li><a href="index.php?p=pengaduan"><i class="material-icons">report</i>Pengaduan</a></li>
-              <li><a href="index.php?p=respon"><i class="material-icons">question_answer</i>Respon</a></li>
-              <li><a href="index.php?p=user"><i class="material-icons">account_box</i>User</a></li>
-              <li><a href="index.php?p=laporan"><i class="material-icons">book</i>Laporan</a></li>
-              <li>
-                  <div class="divider"></div>
-              </li>
-              <li><a class="waves-effect" href="../index.php?p=logout"><i class="material-icons">logout</i>Logout</a></li>
-          </ul>
+<body>
 
-          <a href="#" data-target="slide-out" class="btn sidenav-trigger"><i class="material-icons">menu</i></a>
-      </div>
+  
 
-      <div class="col s12 m9">
-        
-	<?php 
-		if(@$_GET['p']==""){
-			include_once 'dashboard.php';
-		}
-		elseif(@$_GET['p']=="dashboard"){
-			include_once 'dashboard.php';
-		}
-		elseif(@$_GET['p']=="registrasi"){
-			include_once 'registrasi.php';
-		}
-		elseif(@$_GET['p']=="regis_hapus"){
-			$query = mysqli_query($koneksi,"DELETE FROM masyarakat WHERE nik='".$_GET['nik']."'");
-			if($query){
-				header('location:index.php?p=registrasi');
-			}
-		}
-		elseif(@$_GET['p']=="pengaduan"){
-			include_once 'pengaduan.php';
-		}
-		elseif(@$_GET['p']=="pengaduan_hapus"){
-			$query=mysqli_query($koneksi,"SELECT * FROM pengaduan WHERE id_pengaduan='".$_GET['id_pengaduan']."'");
-			$data=mysqli_fetch_assoc($query);
-			unlink('../img/'.$data['foto']);
-			if($data['status']=="proses"){
-				$delete=mysqli_query($koneksi,"DELETE FROM pengaduan WHERE id_pengaduan='".$_GET['id_pengaduan']."'");
-				header('location:index.php?p=pengaduan');
-			}
-			elseif($data['status']=="selesai"){
-				$delete=mysqli_query($koneksi,"DELETE FROM pengaduan WHERE id_pengaduan='".$_GET['id_pengaduan']."'");
-				if($delete){
-					$delete2=mysqli_query($koneksi,"DELETE FROM tanggapan WHERE id_pengaduan='".$_GET['id_pengaduan']."'");
-					header('location:index.php?p=pengaduan');
-				}	
-			}
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
-		}
-		elseif(@$_GET['p']=="more"){
-			include_once 'more.php';
-		}
-		elseif(@$_GET['p']=="respon"){
-			include_once 'respon.php';
-		}
-		elseif(@$_GET['p']=="tanggapan_hapus"){
-			
-			$query = mysqli_query($koneksi,"DELETE FROM tanggapan WHERE id_tanggapan='".$_GET['id_tanggapan']."'");
-			if($query){
-				header('location:index.php?p=respon');
-			}
-		}
-		elseif(@$_GET['p']=="user"){
-			include_once 'user.php';
-		}
-		elseif(@$_GET['p']=="user_input"){
-			include_once 'user_input.php';
-		}
-		elseif(@$_GET['p']=="user_edit"){
-			include_once 'user_edit.php';
-		}
-		elseif(@$_GET['p']=="user_hapus"){
-			$query = mysqli_query($koneksi,"DELETE FROM petugas WHERE id_petugas='".$_GET['id_petugas']."'");
-			if($query){
-				header('location:index.php?p=user');
-			}
-		}
-		elseif(@$_GET['p']=="laporan"){
-			include_once 'laporan.php';
-		}
-	 ?>
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-      </div>
+    
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Manajemen Akun</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-faq.html">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Tabel Produk</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-contact.html">
+          <i class="bi bi-envelope"></i>
+          <span>Pesan Masuk</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-register.html">
+          <i class="bi bi-card-list"></i>
+          <span>Hero/Carousel</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li><hr class="dropdown-divider"></li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Log Out</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS Files -->
+  <script src="<?=base_url();?>assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="<?=base_url();?>assets/js/bootstrap.bundle.min.js"></script>
+  <script src="<?=base_url();?>assets/vendor/chart.js/chart.min.js"></script>
+  <script src="<?=base_url();?>assets/vendor/echarts/echarts.min.js"></script>
+  <script src="<?=base_url();?>assets/vendor/quill/quill.min.js"></script>
+  <script src="<?=base_url();?>assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="<?=base_url();?>assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="<?=base_url();?>assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- Template Main JS File -->
+  <script src="<?=base_url();?>assets/js/main.js"></script>
 
-      <!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" src="../js/materialize.min.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
 
-      <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-          var elems = document.querySelectorAll('.sidenav');
-          var instances = M.Sidenav.init(elems);
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-          var elems = document.querySelectorAll('.modal');
-          var instances = M.Modal.init(elems);
-        });
-
-      </script>
-
-    </body>
-  </html>
+</html>
