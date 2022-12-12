@@ -3,7 +3,7 @@
 class Base_controller extends CI_Controller
 {
 
-	// protected $template = 'template/dashboard/index';
+	protected $template = 'template/dashboard/index';
 	protected $data = array();
 
 	protected $auth = true;
@@ -20,9 +20,9 @@ class Base_controller extends CI_Controller
 		}
 	}
 
-	// protected function render($view)
-	// {
-	// 	$this->data['content'] = $this->load->view($view, $this->data, true);
-	// 	$this->load->view($this->template, $this->data);
-	// }
+	protected function render($view)
+	{
+		$this->data['content'] = $this->load->view($view, $this->data, true);
+		$this->load->view($this->template, $this->data);
+	}
 }

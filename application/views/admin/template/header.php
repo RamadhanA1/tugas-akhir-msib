@@ -74,7 +74,7 @@
       </li><!-- End Hero/Carousel Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="<?=base_url();?>admin/product">
+        <a class="nav-link collapsed" href="<?=base_url();?>admin/products">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Tabel Produk</span>
         </a>

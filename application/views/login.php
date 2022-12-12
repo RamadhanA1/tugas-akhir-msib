@@ -61,9 +61,11 @@
               <input
                 type="email"
                 class="form-control rounded-4 shadow-sm py-2"
-                id="exampleInputEmail1"
+                id="email"
+                name="email"
                 aria-describedby="emailHelp"
                 placeholder="Type email here"
+                require
               />
               <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
             </div>
@@ -74,8 +76,10 @@
               <input
                 type="password"
                 class="form-control rounded-4 shadow-sm py-2"
-                id="exampleInputPassword1"
+                id="password"
+                name="password"
                 placeholder="Type password here"
+                require
               />
             </div>
             <div class="row">
@@ -95,7 +99,9 @@
             </div>
 
             <!-- <a href="<?=base_url();?>admin/sidebar"><button class="btn btn-success p-2" style="width: 10rem;">Log In</button></a> -->
-            <a href="<?=base_url();?>admin/sidebar" class="d-flex justify-content-center mt-3"><button class="btn btn-success p-2" style="width: 10rem;">Log In</button></a>
+            <!-- <a href="<?=base_url();?>admin/sidebar" class="d-flex justify-content-center mt-3"> -->
+            <button class="btn btn-success p-2" style="width: 10rem;">Log In</button>
+          <!-- </a> -->
             <!-- <a href="<?=base_url();?>/assets/#"><button class="btn btn-outline-success me-2" style="width: 6rem;">Sign Up</button></a> -->
             <!-- <div class="row">
               <div class="col-auto d-flex justify-items-end">
