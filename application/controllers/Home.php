@@ -5,7 +5,10 @@ class Home extends CI_Controller{
     public function index(){
         $this->load->model('M_heroUnit');
         $data['hero'] = $this->M_heroUnit->getHero();
-        $this->load->view('index', $data);
+        $this->load->model('M_products');
+        $data['products'] = $this->M_products->getProducts();
+        $this->load->view('index', $data );
+        // $this->load->view('index', $data2 );
     }
 }
 ?>
