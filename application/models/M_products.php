@@ -36,7 +36,28 @@ class M_products extends CI_Model{
 		// 	'u.password'	=> $password
 		// ]);
 		$this->db->join($this->kategoriTable . ' k', 'k.id = p.kategori_id');
-		return $this->db->get($this->productsTable . ' p', )->result();
+		return $this->db->get($this->productsTable . ' p', )->result_array();
 	}
-}
+
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('products');
+    }
+
+    public function getWhereId($id)
+    {
+        return $this->db->get_where('products', ['id' => $id])->row_array();
+        
+    }
+    
+    public function getWhereCategory($id){
+        $this->db->select("*");
+        $this->db->from('products');
+        $this->db->where('status', 'Disetujui');
+        $this->db->where('kategori_id', ['kategori_id' => $id] );
+        $get = $this->db->get();
+        return $get->result_array();
+    }
+} 
 ?>

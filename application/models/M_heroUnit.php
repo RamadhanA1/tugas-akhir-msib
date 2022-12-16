@@ -32,7 +32,19 @@ class M_heroUnit extends CI_Model{
 		// 	'u.password'	=> $password
 		// ]);
 		// $this->db->join($this->roleTable . ' r', 'r.id = u.role_id');
-		return $this->db->get($this->heroTable . ' h', )->result();
+		return $this->db->get($this->heroTable . ' h', )->result_array();
 	}
+
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('hero_unit');
+    }
+
+    public function getWhereId($id)
+    {
+        return $this->db->get_where('hero_unit', ['id' => $id])->row_array();
+        
+    }
 }
 ?>

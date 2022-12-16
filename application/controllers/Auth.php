@@ -43,7 +43,17 @@ class Auth extends Base_controller
 		}
 
 		$this->session->set_userdata('user', $user);
-		redirect(site_url('admin/Home'));
+		if ($this->session->userdata('user')->role_name == 'admin') {
+			redirect(site_url('admin/Home'));
+		}
+		else if (($this->session->userdata('user')->role_name == 'staff')) {
+			redirect(site_url('staff/Home'));
+		}
+		else {
+			$this->session->set_flashdata('error', 'Akun tidak terdaftar!');
+			redirect(site_url('Login'));
+		}
+		
 	}
 
 	public function logout()

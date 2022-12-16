@@ -70,25 +70,25 @@
 <section class="container-fluid my-4 row">
     <div class="col-3 card-body">
         <h4 class="d-flex justify-content-center mb-3">Kategori Barang</h4>
-        <ul class="list-group">
-            <li class="list-group-item">Semua Kategori</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A fourth item</li>
-            <li class="list-group-item">And a fifth one</li>
-        </ul>
+        <div class="list-group">
+        <a href="<?=base_url('pages/Products');?>" class="list-group-item list-group-item-action">Semua Kategori</a>    
+            <?php foreach($kategori as $opsi):?>
+              <a href="<?=base_url();?>pages/Kategori" class="list-group-item list-group-item-action"><?php echo $opsi['name']?></a>
+              
+            <?php endforeach?>
+        </div>
     </div>
     <div class="col-9">
     <div class="row row-cols-1 row-cols-md-5 g-4">
-            <?php foreach (array_slice($products, 0, 10) as $rows) : ?>
+            <?php foreach ($products as $rows) : ?>
                 <div class="col">
-                  <div class="card h-100">
+                  <a class="card h-100" href="<?php echo $rows['link'] ?>">
                     <img src="<?= base_url(); ?>/assets/img/<?php echo $rows['img'] ?>" class="card-img-top img-product" alt="...">
                     <div class="card-body">
                       <p class="card-text product-title"><?php echo $rows['nama'] ?></p>
                       <h5 class="card-title text-success">Rp. <?php echo $rows['harga'] ?></h5>
                     </div>
-                  </div>
+                  </a>
                 </div>
               <?php endforeach; ?>
     </div>
