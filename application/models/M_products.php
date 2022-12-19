@@ -55,7 +55,7 @@ class M_products extends CI_Model{
         $this->db->select("*");
         $this->db->from('products');
         $this->db->where('status', 'Disetujui');
-        $this->db->where('kategori_id', ['kategori_id' => $id] );
+        $this->db->where('kategori_id', $id );
         $get = $this->db->get();
         return $get->result_array();
     }

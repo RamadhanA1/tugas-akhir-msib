@@ -89,96 +89,17 @@
   <section class=" container my-5 rounded-1 bg-success shadow-sm">
     <h3 class="text-center text-white h-100 py-4 mb-3">Products and Services</h3>
     <div class="row row-cols-1 row-cols-md-5 g-4 bg-light px-4 pt-3 pb-5">
+    <?php foreach($kategori as $opsi):?>
       <div class="col">
-        <div class="card h-100 shadow-sm">
+        <a class="card h-100 shadow-sm list-group-item-action" href="<?=base_url();?>pages/Kategori/p/<?= $opsi['id']?>">
           <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
           <div class="card-body text-center">
-            <h6 class="card-title">Komputer</h6>
-            <p class="card-text">Menjual Komputer Baru maupun Bekas</p>
+            <h6 class="card-title"><?php echo $opsi['name']?></h6>
+            <p class="card-text"><?php echo $opsi['deskripsi']?></p>
           </div>
-        </div>
+        </a>
       </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
-          <div class="card-body text-center">
-            <h6 class="card-title">Laptop</h6>
-            <p class="card-text">Menjual Laptop Baru maupun Bekas</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
-          <div class="card-body text-center">
-            <h6 class="card-title">TechInGo</h6>
-            <p class="card-text">Jasa Perbaikan Komputer, Pemasangan Internet, Dll</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
-          <div class="card-body text-center">
-            <h6 class="card-title">Hardware</h6>
-            <p class="card-text">Monitor, Keyboard, Mouse</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
-          <div class="card-body text-center">
-            <h6 class="card-title">Software</h6>
-            <p class="card-text">Operting System, Antivirus, Dll</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
-          <div class="card-body text-center">
-            <h6 class="card-title">Aksesoris</h6>
-            <p class="card-text">Aksesoris dan Perangkat Tambahan Komputer</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
-          <div class="card-body text-center">
-            <h6 class="card-title">Komponen</h6>
-            <p class="card-text">Komponen Komputer dan Laptop</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
-          <div class="card-body text-center">
-            <h6 class="card-title">Gaming Gear</h6>
-            <p class="card-text">Perlengkapan Penunjang Gamer</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
-          <div class="card-body text-center">
-            <h6 class="card-title">Media Penyimpanan</h6>
-            <p class="card-text">MicroSD, SD Card, HDD, SSD</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="<?= base_url(); ?>/assets/img/logo-1.png" class="card-img-top my-3" alt="..." style="height: 3rem; object-fit:contain">
-          <div class="card-body text-center">
-            <h6 class="card-title">Network</h6>
-            <p class="card-text">Media Penunjang Konektivitas</p>
-          </div>
-        </div>
-      </div>
+    <?php endforeach?>
     </div>
   </section>
 
@@ -192,13 +113,13 @@
             <div class="row row-cols-1 row-cols-md-5 g-4">
               <?php foreach (array_slice($products, 0, 10) as $rows) : ?>
                 <div class="col">
-                  <div class="card h-100">
+                  <a class="card h-100 list-group-item-action" href="<?php echo $rows['link']?>">
                     <img src="<?= base_url(); ?>/assets/img/<?php echo $rows['img'] ?>" class="card-img-top img-product" alt="...">
-                    <div class="card-body">
+                    <div class="card-body ">
                       <p class="card-text product-title"><?php echo $rows['nama'] ?></p>
-                      <h5 class="card-title text-success">Rp. <?php echo $rows['harga'] ?></h5>
+                      <h6 class="card-title text-success">Rp. <?php echo $rows['harga'] ?></h6>
                     </div>
-                  </div>
+                  </a>
                 </div>
               <?php endforeach; ?>
             </div>
@@ -206,20 +127,18 @@
         </div>
         <div class="carousel-item product-slide">
           <div class="d-block w-100">
-            <div class="row row-cols-1 row-cols-md-6 g-4">
+            <div class="row row-cols-1 row-cols-md-5 g-4">
             <?php foreach ($products as $rows) : ?>
                 <div class="col">
-                  <div class="card h-100">
+                  <div class="card h-100 list-group-item-action" href="<?php echo $rows['link']?>" >
                     <img src="<?= base_url(); ?>/assets/img/<?php echo $rows['img'] ?>" class="card-img-top img-product" alt="...">
                     <div class="card-body">
                       <p class="card-text product-title"><?php echo $rows['nama'] ?></p>
-                      <h5 class="card-title text-success">Rp. <?php echo $rows['harga'] ?></h5>
+                      <h6 class="card-title text-success">Rp. <?php echo $rows['harga'] ?></h6>
                     </div>
                   </div>
                 </div>
               <?php endforeach; ?>
-
-
             </div>
           </div>
         </div>

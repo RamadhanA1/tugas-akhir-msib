@@ -73,8 +73,9 @@
         <div class="list-group">
         <a href="<?=base_url('pages/Products');?>" class="list-group-item list-group-item-action">Semua Kategori</a>    
             <?php foreach($kategori as $opsi):?>
-              <a href="<?=base_url();?>pages/Kategori" class="list-group-item list-group-item-action"><?php echo $opsi['name']?></a>
-              
+              <?php if ($opsi['id']!=3):?> 
+              <a href="<?=base_url();?>pages/Kategori/p/<?= $opsi['id']?>" class="list-group-item list-group-item-action"><?php echo $opsi['name']?></a>
+              <?php endif;?>
             <?php endforeach?>
         </div>
     </div>
@@ -82,7 +83,7 @@
     <div class="row row-cols-1 row-cols-md-5 g-4">
             <?php foreach ($products as $rows) : ?>
                 <div class="col">
-                  <a class="card h-100" href="<?php echo $rows['link'] ?>">
+                  <a class="card h-100 list-group-item-action" href="<?php echo $rows['link'] ?>">
                     <img src="<?= base_url(); ?>/assets/img/<?php echo $rows['img'] ?>" class="card-img-top img-product" alt="...">
                     <div class="card-body">
                       <p class="card-text product-title"><?php echo $rows['nama'] ?></p>

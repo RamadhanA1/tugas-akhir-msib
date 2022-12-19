@@ -9,6 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.css">
   <link rel="stylesheet" href="<?=base_url();?>assets/css/style.css">
+  <link href="<?=base_url();?>assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +66,62 @@
         </nav>
     </div>
 </div>
+
+<!-- About Start -->
+<div class="container-xxl py-5 mb-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="h-100">
+                        <h1 class="display-6 mb-5 fw-bold text-warning">Cari Perangkat PC dan Layanannya? Disini Aja!</h1>
+                        <div class="row g-4 mb-4">
+                            <div class="col-sm-5">
+                                <div class="d-flex align-items-center">
+                                    <i class="ri-star-fill me-3 text-success"></i>    
+                                <!-- <img class="flex-shrink-0 me-3" src="img/icon/icon-07-primary.png" alt=""> -->
+                                    <h5 class="mb-0 text-success">Barang Berkualitas</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="d-flex align-items-center">
+                                <i class="ri-star-fill me-3 text-success"></i>     
+                                <!-- <img class="flex-shrink-0 me-3" src="img/icon/icon-09-primary.png" alt=""> -->
+                                    <h5 class="mb-0 text-success" >Teknisi Berpengalaman</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                        <div class="border-top mt-4 pt-4">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-3">
+                                            <i class="ri-phone-fill text-success"></i>
+                                        </div>
+                                        <h5 class="mb-0 text-success">0821-9845-6XXX</h5>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-3">
+                                            <i class="ri-mail-fill text-success"></i>
+                                        </div>
+                                        <h5 class="mb-0 text-success">CompStore.main@gmail.com</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                  <img class="img-fluid" data-wow-delay="0.1s" src="<?=base_url();?>assets/img/teknisi.jpg" style=" animation-delay: 0.1s; animation-name: zoomIn;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
 
   <!-- Footer -->
   <section class="bg-success">

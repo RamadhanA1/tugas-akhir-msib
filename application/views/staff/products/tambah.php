@@ -19,12 +19,12 @@
                 <h5 class="card-title">Tambah Produk</h5>
             </div>
             <div class="col-auto d-flex align-items-center">
-                <a href="<?=base_url();?>/Staff/Products"><button class="btn btn-success">< Kembali</button></a>
+                <a href="<?=base_url();?>/staff/Products"><button class="btn btn-success">< Kembali</button></a>
             </div>
             </div>
 
             <!-- Tambah hero Form -->
-            <form class="row g-3" action="<?php echo site_url('Staff/Products/upload')?>" method="POST" enctype="multipart/form-data">
+            <form class="row g-3" action="<?php echo site_url('staff/Products/upload')?>" method="POST" enctype="multipart/form-data">
                 <div class="col-12">
                   <label for="inputFile" class="form-label">Image</label>
                   <input class="form-control" type="file" id="formFile" name="img" required>

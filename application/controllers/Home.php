@@ -7,6 +7,8 @@ class Home extends CI_Controller{
         $data['hero'] = $this->M_heroUnit->getHero();
         $this->load->model('M_products');
         $data['products'] = $this->M_products->getProducts();
+        $this->load->model('M_kategori');
+        $data['kategori'] = $this->M_kategori->get();
         $this->load->view('index', $data );
         // $this->load->view('index', $data2 );
     }

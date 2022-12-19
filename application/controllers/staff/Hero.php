@@ -17,17 +17,17 @@ class Hero extends CI_Controller
     {
         // $this->data['title'] = "akun";
         $this->data['hero_unit'] = $this->M_heroUnit->get();
-        $this->data['hero_unit'] = $this->load->view('Staff/hero', $this->data, true);
-        $this->load->view('Staff/template/header');
-        $this->load->view('Staff/hero');
-        $this->load->view('Staff/template/footer');
+        $this->data['hero_unit'] = $this->load->view('staff/hero', $this->data, true);
+        $this->load->view('staff/template/header');
+        $this->load->view('staff/hero');
+        $this->load->view('staff/template/footer');
     }
 
     public function tambah()
     {
-        $this->load->view('Staff/template/header');
-        $this->load->view('Staff/hero/tambah');
-        $this->load->view('Staff/template/footer');
+        $this->load->view('staff/template/header');
+        $this->load->view('staff/hero/tambah');
+        $this->load->view('staff/template/footer');
     }
 
     public function upload()
@@ -62,7 +62,7 @@ class Hero extends CI_Controller
             if ($this->db->affected_rows() > 0) {
                 // echo 'data berhasil disimpan';
                 $this->session->set_flashdata('flash', 'Ditambahkan');
-                redirect('Staff/Hero');
+                redirect('staff/Hero');
             } else {
                 echo 'data gagal disimpan';
             }
@@ -81,15 +81,15 @@ class Hero extends CI_Controller
     {
         $this->M_heroUnit->delete($id);
         $this->session->set_flashdata('flash', 'Dihapus');
-        redirect('Staff/Hero');
+        redirect('staff/Hero');
     }
 
     public function ubah($id)
     {
         $data['hero_unit'] = $this->M_heroUnit->getWhereId($id);
-        $this->load->view('Staff/template/header');
-        $this->load->view('Staff/hero/ubah', $data);
-        $this->load->view('Staff/template/footer');
+        $this->load->view('staff/template/header');
+        $this->load->view('staff/hero/ubah', $data);
+        $this->load->view('staff/template/footer');
     }
 
     public function simpan()
@@ -135,7 +135,7 @@ class Hero extends CI_Controller
         if ($this->db->affected_rows() > 0) {
             // echo 'data berhasil disimpan';
             $this->session->set_flashdata('flash', 'Diubah');
-            redirect('Staff/Hero');
+            redirect('staff/Hero');
         } else {
             echo 'data tidak ada yang diubah';
         }

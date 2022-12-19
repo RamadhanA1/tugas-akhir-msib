@@ -15,10 +15,10 @@ class Akun extends CI_Controller{
     public function index(){
         $this->data['title'] = "akun";
 		$this->data['akun'] = $this->M_akun->get();
-        $this->data['akun'] = $this->load->view('Staff/akun', $this->data, true);
-        $this->load->view('Staff/template/header');
-        $this->load->view('Staff/akun');
-        $this->load->view('Staff/template/footer');
+        $this->data['akun'] = $this->load->view('admin/akun', $this->data, true);
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/akun');
+        $this->load->view('admin/template/footer');
     }
 }
 ?>

@@ -26,5 +26,17 @@ class Kategori extends CI_Controller{
     //     // $this->session->set_flashdata('flash', 'Dihapus');
     //     // redirect('admin/products');
     // }
+
+    public function p($id){
+        $this->load->model('M_products');
+        $this->load->model('M_kategori');
+        $data['products'] = $this->M_products->getWhereCategory($id);
+        $data['kategori'] = $this->M_kategori->get();
+        // var_dump($data['products']);
+        // die;
+
+        // $this->load->view('index', $data );
+        $this->load->view('pages/kategori', $data);
+    }
 }
 ?>

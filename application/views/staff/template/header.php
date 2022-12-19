@@ -53,35 +53,35 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<?=base_url();?>/Staff/home">
+        <a class="nav-link collapsed" href="<?=base_url();?>/staff/home">
           <i class="bi bi-grid"></i>
           <span>Home</span>
         </a>
       </li><!-- End Home Nav -->
 
       <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="<?=base_url();?>/Staff/akun">
+        <a class="nav-link collapsed" href="<?=base_url();?>/staff/akun">
           <i class="bi bi-person"></i>
           <span>Manajemen Akun</span>
         </a>
       </li>End Manajemen Akun Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="<?=base_url();?>/Staff/hero">
+        <a class="nav-link collapsed" href="<?=base_url();?>/staff/hero">
           <i class="bi bi-card-list"></i>
           <span>Hero/Carousel</span>
         </a>
       </li><!-- End Hero/Carousel Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="<?=base_url();?>Staff/products">
+        <a class="nav-link collapsed" href="<?=base_url();?>staff/products">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Tabel Produk</span>
         </a>
       </li><!-- End Tabel Produk Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="<?=base_url();?>Staff/pesan">
+        <a class="nav-link collapsed" href="<?=base_url();?>staff/pesan">
           <i class="bi bi-envelope"></i>
           <span>Pesan Masuk</span>
         </a>

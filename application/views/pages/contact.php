@@ -46,9 +46,9 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav mx-auto pe-4 py-3 py-lg-0">
           <a href="<?=base_url();?>" class="nav-item nav-link">Home</a>
-          <a href="<?=base_url();?>/pages/about" class="nav-item nav-link">About Us</a>
-          <a href="<?=base_url();?>/pages/product" class="nav-item nav-link">Products</a>
-          <a href="<?=base_url();?>/pages/techingo" class="nav-item nav-link">TechInGo</a>
+          <a href="<?=base_url();?>pages/about" class="nav-item nav-link">About Us</a>
+          <a href="<?=base_url();?>pages/products" class="nav-item nav-link">Products</a>
+          <a href="<?=base_url();?>pages/techingo" class="nav-item nav-link">TechInGo</a>
           <!-- <div class="nav-item dropdown">
                 <a href="<?=base_url();?>" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu bg-light border-0 m-0">
@@ -59,7 +59,7 @@
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>
             </div> -->
-          <a href="<?=base_url();?>" class="nav-item nav-link active">Contacts</a>
+          <a href="#" class="nav-item nav-link active">Contacts</a>
         </div>
         <div class="h-100 d-lg-inline-flex align-items-center d-none">
           <a href="<?=base_url();?>login"

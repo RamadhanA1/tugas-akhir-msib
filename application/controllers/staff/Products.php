@@ -17,17 +17,17 @@ class Products extends CI_Controller
     {
         // $this->data['title'] = "akun";
         $this->data['products'] = $this->M_products->get();
-        $this->data['products'] = $this->load->view('Staff/products', $this->data, true);
-        $this->load->view('Staff/template/header');
-        $this->load->view('Staff/products');
-        $this->load->view('Staff/template/footer');
+        $this->data['products'] = $this->load->view('staff/products', $this->data, true);
+        $this->load->view('staff/template/header');
+        $this->load->view('staff/products');
+        $this->load->view('staff/template/footer');
     }
 
     public function tambah()
     {
-        $this->load->view('Staff/template/header');
-        $this->load->view('Staff/products/tambah');
-        $this->load->view('Staff/template/footer');
+        $this->load->view('staff/template/header');
+        $this->load->view('staff/products/tambah');
+        $this->load->view('staff/template/footer');
     }
 
     public function upload()
@@ -65,7 +65,7 @@ class Products extends CI_Controller
             if ($this->db->affected_rows() > 0) {
                 // echo 'data berhasil disimpan';
                 $this->session->set_flashdata('flash', 'Ditambahkan');
-                redirect('Staff/products');
+                redirect('staff/products');
             } else {
                 echo 'data gagal disimpan';
             }
@@ -76,22 +76,22 @@ class Products extends CI_Controller
     {
         $this->M_products->delete($id);
         $this->session->set_flashdata('flash', 'Dihapus');
-        redirect('Staff/products');
+        redirect('staff/products');
     }
 
     public function ubah($id)
     {
         $data['products'] = $this->M_products->getWhereId($id);
-        $this->load->view('Staff/template/header');
-        $this->load->view('Staff/products/ubah', $data);
-        $this->load->view('Staff/template/footer');
+        $this->load->view('staff/template/header');
+        $this->load->view('staff/products/ubah', $data);
+        $this->load->view('staff/template/footer');
     }
 
     public function simpan()
     {
         // $this->M_products->ubah();
         // $this->session->set_flashdata('flash', 'diubah');
-        // redirect('Staff/products');
+        // redirect('staff/products');
         $config['upload_path'] = './assets/img/';
         $config['allowed_types'] = 'gif|jpg|png|svg';
         $config['max_size'] = 10000;
@@ -128,7 +128,7 @@ class Products extends CI_Controller
         if ($this->db->affected_rows() > 0) {
             // echo 'data berhasil disimpan';
             $this->session->set_flashdata('flash', 'Diubah');
-            redirect('Staff/products');
+            redirect('staff/products');
         } else {
             echo 'data tidak ada yang diubah';
         }

@@ -26,7 +26,7 @@
                 <h5 class="card-title">List Produk</h5>
             </div>
             <div class="col-auto d-flex align-items-center">
-                <a href="<?=base_url();?>Staff/Products/tambah"><button class="btn btn-success">Tambah Produk</button></a>
+                <a href="<?=base_url();?>staff/Products/tambah"><button class="btn btn-success">Tambah Produk</button></a>
             </div>
             </div>
             
@@ -66,8 +66,8 @@
 						</td> -->
                             <td class="">
                                 
-                                <a class="btn-warning btn me-2" href="<?=base_url();?>Staff/Products/ubah/<?= $product['id']?>">Edit</a>
-                                <a href="<?=base_url();?>Staff/Products/hapus/<?= $product['id'] ?>" class="btn-danger btn" onclick="return confirm ('Hapus Produk ini?');">
+                                <a class="btn-warning btn me-2" href="<?=base_url();?>staff/Products/ubah/<?= $product['id']?>">Edit</a>
+                                <a href="<?=base_url();?>staff/Products/hapus/<?= $product['id'] ?>" class="btn-danger btn" onclick="return confirm ('Hapus Produk ini?');">
                                     Hapus
                                 </a>
                             </td>

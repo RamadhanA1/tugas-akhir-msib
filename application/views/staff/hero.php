@@ -19,7 +19,7 @@
                 <h5 class="card-title">Hero Status</h5>
             </div>
             <div class="col-auto d-flex align-items-center">
-                <a href="<?=base_url();?>Staff/Hero/tambah"><button class="btn btn-success">Tambah Hero</button></a>
+                <a href="<?=base_url();?><staff>Hero/tambah"><button class="btn btn-success">Tambah Hero</button></a>
             </div>
             </div>
 
@@ -57,8 +57,8 @@
 							<button class="btn btn-primary btn-sm">Detail</button>
 						</td> -->
                             <td class="">
-                                <a class="btn-warning btn me-2" href="<?=base_url();?>Staff/Hero/ubah/<?= $hero['id']?>">Edit</a>
-                                <!-- <a href="<?=base_url();?>Staff/Hero/hapus/<?= $hero['id'] ?>" class="btn-danger btn" onclick="return confirm ('Hapus Hero ini?');">
+                                <a class="btn-warning btn me-2" href="<?=base_url();?><staff>Hero/ubah/<?= $hero['id']?>">Edit</a>
+                                <!-- <a href="<?=base_url();?><staff>Hero/hapus/<?= $hero['id'] ?>" class="btn-danger btn" onclick="return confirm ('Hapus Hero ini?');">
                                     Hapus
                                 </a> -->
                             </td>

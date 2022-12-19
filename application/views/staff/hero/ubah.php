@@ -19,12 +19,12 @@
                 <h5 class="card-title">Ubah Hero</h5>
             </div>
             <div class="col-auto d-flex align-items-center">
-                <a href="<?=base_url();?>/Staff/Hero"><button class="btn btn-success">< Kembali</button></a>
+                <a href="<?=base_url();?>/staff/Hero"><button class="btn btn-success">< Kembali</button></a>
             </div>
             </div>
 
             <!-- Tambah hero Form -->
-            <form class="row g-3" action="<?php echo site_url('Staff/Hero/simpan')?>" method="POST" enctype="multipart/form-data">
+            <form class="row g-3" action="<?php echo site_url('staff/Hero/simpan')?>" method="POST" enctype="multipart/form-data">
                 <div class="col-12">
                   <input class="form-control" type="hidden" name="id" value="<?= $hero_unit['id']?>">
                   <img src="<?= base_url();?>/assets/img/<?= $hero_unit['img'] ?>" style="width: 200px;">
