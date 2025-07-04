@@ -6,6 +6,7 @@ class Akun extends CI_Controller{
 
     public function __construct()
 	{
+        // testing push
 		parent::__construct();
 		$this->load->model([
 			'M_akun'
